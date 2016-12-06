@@ -1,3 +1,28 @@
+
+/*https://jsfiddle.net/1u0r7jz8/6772/*/
+
 body {
-  background-color: purple
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg");
 }
+
+header {
+  font-family: "Helvetica";
+  color: orange;
+}
+
+footer {
+  background-color: #CCCCCC;
+  margin: 10px;
+  padding: 20px;
+}
+
+.column-1, .column-2{
+  background-color:teal;
+  margin: 10px;
+  padding: 10px;
+  border: 3px solid;
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+}
+
