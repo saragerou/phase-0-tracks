@@ -4,7 +4,7 @@
 # Should we order some for you?
 # Would you like to enroll in health insurance?
 
-# Ask how many employees.
+# Ask how many employees and loop (this will be an overall loop of the questions)
 puts "How many employees will be processed?"
 number_of_employees = gets.chomp.to_i
 
@@ -24,7 +24,6 @@ while number_of_employees > 0
   
   puts "Would you like to enroll in the company's health insurance? (y/n)"
   insurance = gets.chomp
-  
   
   # Compare age given to calculated age given the year born, compared to 2016
   vampire_test = ""
@@ -50,7 +49,7 @@ while number_of_employees > 0
     vampire_test = "Reults inconclusive."
   end
   
-  # Do you have alergies loop?
+  # Do you have allergies loop?
   allergies = ""
   while allergies != "done"
     puts "List any allergies you might have. You can type 'done' when you are finished."
