@@ -1,0 +1,31 @@
+Elevator Robot Task
+- Approach elevator
+- Scan/search for floor map to identify which floor has your desired location
+- Identify which floor you are currently on
+  - Decide whether you need to go up (adding value to your current level) or down (subtracting value from your current level)
+- Approach the wall next to the elevator(s) with UP and/or DOWN buttons, which will be labeled with either an UP and DOWN arrow on each button, OR with the words "UP" and "DOWN" written on the buttons
+- Press the appropriate button depending on your decided location
+- When doors to the elevator open, step inside
+- On the inside of the elevator, locate the panel with the numbered floors
+  - Press the number of the floor that you would like to go to
+- Look up at the display screen indicator that shows what floor you are currently on
+  - When the elevator stops and the doors open on your desired floor, step out of the elevator
+
+Making the Bed Task
+
+- Your end result must be: 
+  - Centered, layered blankets/sheets so that only the top layer is visible
+  - All pillows must be reshaped and placed at the top of the bed
+    -The top of the bed is located next to the wall
+    -The foot of the bed is opposite the top
+- When your eyes open in the morning, you are located in your bed
+- If you are under the sheets/blankets/bedding, pull them back
+- Swing your feet to and over the side of the bed
+- Sit up, stand up, placing your feet on the floor beside the bed
+- Turn around and view the bedding
+  - Based on the desired end result of layered blankets and strategically placed pillows, decide what is currently out of place
+- Reposition blankets
+  - Make any adjustments necessary including realigning lower sheets and tucking them underneath the mattress in order to achieve the end result of only the top bedding visible
+- Reposition pillows
+  - Take pillows and beat them until they are to maximum fluffiness and take up as much volume as possible
+  - Place pillows at the top of the bed either underneath or on top of the top bedding
