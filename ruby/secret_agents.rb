@@ -1,102 +1,75 @@
-# Encrypt method that advances every 
-# letter of a string one letter forward
+# Encrypt method that advances each character by one index
+  # Ensure that 'z' returns 'a' and not 'aa'
+  # Leave all blanks unchanged
+# Loop so that each letter is run and the 
+# index is advanced by one
+  # Loop must take string length into account
 
-def encrypt (str)
-  letters = "abcdefghijklmnopqrstuvwxyz"
-  letter_1 = (str)[0].next
-  letter_2 = (str)[1].next
-  letter_3 = (str)[2].next
-
-  if letter_1 == "aa"
-   letter_1 = "a"
-  end
-
-  if letter_2 == aa
-   letter_2 = "a"
-  end
-
-  if letter_3 == "aa"
-   letter_3 = "a"
-  end
-  puts letter_1+letter_2+letter_3
-end
-
-def decrypt (str)
-letters = "abcdefghijklmnopqrstuvwxyz"
-
-letter_1= ((str)[0].ord-1).chr
-letter_2= ((str)[1].ord-1).chr
-letter_3= ((str)[2].ord-1).chr
-
-if letter_1 == "`"
- letter_1 = "z"
-end
-
-if letter_2 == "`"
- letter_2 = "z"
-end
-
-if letter_3 == "`"
- letter_3 = "z"
-end
-
-puts letter_1+letter_2+letter_3
-end
-
-decrypt ("bag")
-
-def encrypt (str)
-  string_to_return = ""
-  str.length
-
-
-encrypt 
-
-
-
-def encrypt (str)
-  string_to_return = ""
-  str.length
-    while str.length > 0
-      str = str.next
-  end
-end
-
-encrypt "t"
-
-
-def encrypt (str)
-  string_to_return = ""
-  times = str.length
-    while times > 0
-      current_char = str[0]
-      string_to_return << current_char.next
-      add_next = current_char[1]
-      
+def encrypt(str)
+  # Index needs to be set before loop begins
+  index = 0
+    # Loop needs to run the entire length of the string, each letter
+    while index < str.length
+      # Spaces are to remain spaces
+      if str[index] == " "
+      str[index] = str[index]
+      # .next will increase the letter by one index
+      else
+      str[index] = str[index].next
+      end
+    # Move on to the next letter 
+    index += 1  
     end
-end
+  p str
+end 
 
-encrypt "ertyuio"
+# The directions also called out to ensure that 'z' would change to 'a'
+# I had many iterations, but was unable to make this work in this code
+    #if encrypt_output == "aa"
+    #encrypt_output = "a"
+    #end
 
-
-What is implicit vs explicit returns?
-
-If looping through a string or an array
-
-until
-
-puts "test: #{test}"
-
-
-def encrypt (str)
-  string_to_return = ""
-  times = str.length
-    while times > 0
-      current_char = str[0]
-      current_char.next
-      add_next = current_char[+1]
-      return string_to_return
+def decrypt(str)
+  # As there isn't an opposit of .next, mapping a key of alphabet to work with
+  key = "abcdefghijklmnopqrstuvwxyz"
+  # Index needs to be set before loop begins
+  index = 0
+    while index < str.length
+      # Spaces are to remain spaces
+      if str[index] == " "
+      str[index] = str[index] 
+      # Find letter location with interpolation of string index
+      else letter = key.index("#{str[index]}")
+      # When letter location is found, decrease its space in the alphabet key by 1
+      str[index] = key[letter-1]
     end
+  # Move on to the next letter 
+  index += 1
+  end
+  p str
+end  
+
+# Why does decrypt(encrypt("swordfish")) work?
+  # It works because the methods are being read to first solve the encrypt
+  # and after, work its way to the outer set of parenthesis to solve decrypt
+
+# Secret Agent
+
+# Create code that asks the user (secret agent) if they want encrypt or decrypt
+# Ask them for password to encrypt or decrypt
+# Gather answer with gets.chomp
+# Code will run and print results on screen, based on encrypt/decrypt and password
+
+puts "Greeting, Secret Agent. Would you like to 'encrypt' or 'decrypt' a password?"
+answer = gets.chomp
+puts "Great. #{answer.capitalize} it is."
+puts "Next we need you to type a password:"
+password = gets.chomp
+
+if answer == "encrypt"
+  encrypt(password)
+else answer == "decrypt"
+  decrypt(password)
 end
 
-encrypt "ertyuio"
+puts "Be careful out there, Agent."
