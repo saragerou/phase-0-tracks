@@ -13,6 +13,9 @@ def encrypt(str)
       # Spaces are to remain spaces
       if str[index] == " "
       str[index] = str[index]
+      # If a 'z' is returned, it should print 'a' not 'aa'
+      elsif str[index] == "z"
+        str[index] = "a"
       # .next will increase the letter by one index
       else
       str[index] = str[index].next
