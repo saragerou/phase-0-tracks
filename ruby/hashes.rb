@@ -3,6 +3,7 @@
 
 # Prompt designer for information.
 # Convert entered data to correct formatting
+
 puts "Interior Design Questionnaire"
 puts "Client Name:"
 name = gets.chomp
