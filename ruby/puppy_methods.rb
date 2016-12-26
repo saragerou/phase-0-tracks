@@ -41,6 +41,7 @@ neptune.play_dead
 class Kitten
   
   def initialize(name)
+    @name = name
     puts "A new kitten! Say hello to #{name}!"
   end
 
@@ -50,18 +51,19 @@ class Kitten
 
   def meow(int)
     puts "Meow! " * int
+    @int = int
   end
 
   def interrupt(object)
-    puts "The kitten is walking all over your #{object}. How annoying... yet adorable."
+    puts "#{@name} is walking all over your #{object}. How annoying... yet adorable."
   end
 
 end
 
-kitten1 = Kitten.new("Clarence")
-kitten1.meow(7)
-kitten1.play_with_string
-kitten1.interrupt("computer")
+Clarence = Kitten.new("Clarence")
+Clarence.meow(7)
+Clarence.play_with_string
+Clarence.interrupt("computer")
 
 names_array = ["Forty-Nine", "Fifty", "Seventy-Two", "Milly", "Fish", "Buffalo", "Lamp", "Crayon", "President", "Vice President", "Queen", "King", "Tutu", "Apple", "Josh", "Matt", "Francine", "Fluffy", "Thirty-Nine", "Phil", "Whiskers", "Ocotpus", "Pineapple", "Donkey", "Herman", "Brent", "Jason", "Kyle", "Miranda", "Martha", "Jimmy", "Princess", "Thomas", "Stringbean", "Tulip", "Sara", "Bob", "Frank", "Giraffe", "Owlington", "Orange", "Friend", "Tank", "Purple", "Coffee", "Bean", "Tiger", "Lion", "Bear", "Posey"]
 
@@ -77,5 +79,3 @@ kitten_instances.each do |instance|
   instance.interrupt("desk")
   p instance
 end
-
-
