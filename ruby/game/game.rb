@@ -100,6 +100,8 @@ class Game
 end
 
 
+# User interface
+
 puts "Give me a word."
 word = gets.chomp
 puts ""
