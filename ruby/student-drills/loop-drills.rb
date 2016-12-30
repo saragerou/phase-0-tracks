@@ -5,7 +5,8 @@
 #   puts "The value is #{i}"
 # end
 
-# Drill: create a for loop that counts up to 20, prints out each number along the way, and also prints each number multiplied by 3
+# Drill: create a for loop that counts up to 20, prints out each number along 
+# the way, and also prints each number multiplied by 3
 # ----
 
 # while loops are used to evaluate a conditional and the loop will end when that condition is no longer met.
