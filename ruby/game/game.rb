@@ -10,22 +10,6 @@ class Game
     @is_over = false
   end
 
-  def guess_counter
-    @guess_counter
-  end
-
-  def masked_word
-    @masked_word
-  end
-
-  def original_word
-    @original_word
-  end
-
-  def word
-    @word
-  end
-
   def is_over
     @is_over
   end
