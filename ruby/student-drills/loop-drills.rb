@@ -9,6 +9,11 @@
 # the way, and also prints each number multiplied by 3
 # ----
 
+for i in 0..20
+  p i
+  p i * 3
+end
+
 # while loops are used to evaluate a conditional and the loop will end when that condition is no longer met.
 # In this loop, the condition is your way of breaking the loop.
 # Uncomment the loop below and run it to see what happens. The syntax looks like this:
@@ -20,6 +25,12 @@
 
 # Drill: Create a while loop that builds a 10-character long string by adding your favorite letter each time.
 # ----
+
+x = 0
+while x <= 10
+ p "s" * x
+ x += 1
+end
 
 # until loops are somewhat the opposite logically from while loops. The loop will continue until a condition is evaluated true.
 # Again, the condition is your way of breaking the loop.
@@ -38,8 +49,18 @@
 # Drill: Create an until loop that builds a 10-character long string by adding your favorite letter each time.
 # ----
 
+stop_adding = false
+count = 1
+until stop_adding
+  p "s" * count
+  if count == 10
+    stop_adding = true
+  end
+  count += 1
+end
+
 # .times loop
-# The times loop is used to call the loop n times. You can either pass in no block or a block to evalute.
+# The times loop is used to call the loop n times. You can either pass in no block or a block to evaluate.
 # The number used before .times is used to break the loop.
 # Uncomment the loop below and run it to see what happens. The syntax looks like this:
 # 10.times do
@@ -52,6 +73,10 @@
 
 # Drill: Create a loop that prints your name 5 times.
 # ----
+
+5.times do
+  p "Sara"
+end
 
 # .each loop
 # We use an each loop to iterate through a data structure, passing a block in to execute on each item in that data structure.
@@ -73,5 +98,16 @@
 
 # Uncomment the `books` and `recipe` data structures before attempting the drills. Commented out code doesn't get run.
 # Drill: Using the books array above, use .each to print out any book with more than two words in its name. 
+
+books.each do |title|
+  if title.split.size > 2
+    p title
+  end
+end
+
 # Drill: Using the recipe hash above, use .each to return any ingredients and their amount in a user friendly way, like a recipe would be printed.
 # ---
+
+recipe.each do |ingredient, amount|
+  p "Take #{amount} of #{ingredient} and mix it into the bowl."
+end
