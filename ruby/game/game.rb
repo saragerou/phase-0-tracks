@@ -1,5 +1,5 @@
 class Game
-  attr_reader = :original_word, :word, :is_over, :masked_word, :guess_counter, :guessed_letters
+  attr_accessor :original_word, :word, :is_over, :masked_word, :guess_counter, :guessed_letters
   
   def initialize(word)
     @original_word = word
@@ -8,10 +8,6 @@ class Game
     @guessed_letters = []
     @guess_counter = @word.length + 2
     @is_over = false
-  end
-
-  def is_over
-    @is_over
   end
 
   def guess(letter)
