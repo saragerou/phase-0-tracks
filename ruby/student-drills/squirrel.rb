@@ -30,3 +30,44 @@
 #
 # Create an instance method called `forget` that deletes a random hoard location from the squirrel's hoard locations and returns a string telling us that a new tree has sprouted.
 # ---
+
+
+class Squirrel
+
+attr_reader :color
+attr_accessor :location
+
+  def initialize (color, location)
+    @color = color
+    @location = location
+    @sleep = true
+    @wake_up = false
+    @hoard_locations = {}
+    puts "There's a new squirrel that is #{@color} and lives in the #{@location}."
+  end
+  
+  def wake_up
+    @sleep = false
+  end
+
+  def sleep
+  end
+
+  def hide
+  end
+  
+  def store_food(hoard_locations, nuts_number)
+    @hoard locations = {locations, nuts_number}
+  end
+  
+  def forget
+    puts "A new tree has sprouted!"
+  end
+  
+end
+
+squirrel = Squirrel.new("red", "city")
+squirrel = Squirrel.new("gray", "country")
+squirrel = Squirrel.new("albino", "woods")
+squirrel = Squirrel.new("purple", "town")
+squirrel = Squirrel.new("brown", "tree")
