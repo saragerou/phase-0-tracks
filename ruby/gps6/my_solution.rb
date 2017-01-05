@@ -1,29 +1,32 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself, with: Joel Lebron].
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# Looks directly in the same folder that this Ruby file exists for reference.
+# It differs from relative in that we don't need to go to a different directory for that file.
 require_relative 'state_data'
 
 class VirusPredictor
 
+# Initializes
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+# Calls the two other methods below in order to run them together
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
 
-  def predicted_deaths(population_density, population, state)
+# Predicts the deaths 
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -41,7 +44,8 @@ class VirusPredictor
 
   end
 
-  def speed_of_spread(population_density, state) #in months
+# Returns 
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -83,5 +87,24 @@ alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density],
 alaska.virus_effects
 
 
+STATE_DATA.each {|state, stat|
+  p state
+  p stat
+
+states = VirusPredictor.new(state, stat[:population_density], stat[:population])
+states.virus_effects
+}
+
 #=======================================================================
 # Reflection Section
+# Hash syntax: The entire State hash contained another set of hashes to hold the values for population density and population.
+
+# EXPLANATION OF require_relative
+# Looks directly in the same folder that this Ruby file exists for reference.
+# It differs from relative in that we don't need to go to a different directory for that file.
+
+# Iterating through a hash can be accomplished using loops, .each
+
+# The variables didn't need to be repeated throughout each argument.
+
+# Concept: iterating through a hash! I needed practice.
