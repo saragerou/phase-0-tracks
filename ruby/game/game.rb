@@ -50,7 +50,6 @@ class Game
         @guess_counter -= 1
         @guessed_letters << letter
       end
-      @guessed_letters << letter
   end
 
   def winner
