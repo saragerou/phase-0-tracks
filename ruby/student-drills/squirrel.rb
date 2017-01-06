@@ -53,12 +53,21 @@ attr_accessor :location
   def sleep
   end
 
-  def hide
+ # hash = {}
+#  arr = str.split(' ')
+#  arr.each { |item| hash[item.to_sym] = 1 }
+
+
+
+  def hide(new_location, int)
+    @hoard_locations[new_location]
+    @hoard_locations[new_location] = int
+    p @hoard_locations
   end
   
-  def store_food(hoard_locations, nuts_number)
-    @hoard locations = {locations, nuts_number}
-  end
+#  def store_food(hoard_locations, nuts_number)
+#    @hoard_locations = {hoard_locations, nuts_number}
+#  end
   
   def forget
     puts "A new tree has sprouted!"
@@ -71,3 +80,4 @@ squirrel = Squirrel.new("gray", "country")
 squirrel = Squirrel.new("albino", "woods")
 squirrel = Squirrel.new("purple", "town")
 squirrel = Squirrel.new("brown", "tree")
+squirrel.hide("hole", 5)
