@@ -59,15 +59,11 @@ attr_accessor :location
 
 
 
-  def hide(new_location, int)
+  def store_food(new_location, int)
     @hoard_locations[new_location]
-    @hoard_locations[new_location] = int
+    @hoard_locations[new_location.to_sym] = int
     p @hoard_locations
   end
-  
-#  def store_food(hoard_locations, nuts_number)
-#    @hoard_locations = {hoard_locations, nuts_number}
-#  end
   
   def forget
     puts "A new tree has sprouted!"
@@ -80,4 +76,5 @@ squirrel = Squirrel.new("gray", "country")
 squirrel = Squirrel.new("albino", "woods")
 squirrel = Squirrel.new("purple", "town")
 squirrel = Squirrel.new("brown", "tree")
-squirrel.hide("hole", 5)
+squirrel.store_food("hole", 5)
+squirrel.store_food("pool_table", 19)
