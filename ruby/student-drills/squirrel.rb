@@ -130,3 +130,4 @@ squirrel.store_food("hole", 5)
 squirrel.store_food("pool_table", 19)
 squirrel.eat_something
 squirrel.forget
+
