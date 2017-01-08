@@ -12,4 +12,9 @@ function reverseString(str) {
   return joinArray;
 }
 
-reverseString("Peanut");
+// Driver code
+console.log (reverseString("Peanut"));
+
+if (1 == 1) {
+  console.log (reverseString("Yay Dev Bootcamp!"));
+}
