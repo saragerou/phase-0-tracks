@@ -1,0 +1,16 @@
+sqlite> SELECT reviews.stars, reviews.comment, businesses.name, users.first_name, users.last_name 
+FROM reviews 
+JOIN businesses, users 
+ON reviews.business_id = businesses.id and reviews.user_id = users.id;
+4.5|great business|Grundy Hollow Wedding Chapel|Bradford|Pitt
+2.5|awful|Amir's Towing|Mandy|Kaling
+3|decent|Lotus Yoga|Steven|Wonder
+sqlite>
+
+
+SELECT reviews.stars, reviews.comment, businesses.name, users.first_name
+, users.last_name 
+FROM reviews 
+JOIN businesses, users 
+ON reviews.business_id = businesses.id and reviews.user_id = users.id WHERE reviews.id="2";
+2.5|awful|Amir's Towing|Mandy|Kaling
