@@ -31,17 +31,23 @@ def create_task (db, task, due_date, completed)
 end
 
 def task_completed (db, task)
-  db.execute("UPDATE tasks SET completed = 'true' WHERE task = ?", [task])
-  puts "Okay! That has been set to completed!"
+    db.execute("UPDATE tasks SET completed = 'true' WHERE task = ?", [task])
+    puts "Okay! That task has been set to completed!"  
 end
 
-def print_tasks (db, task, due_date, completed)
-  print_tasks = db.execute("SELECT tasks.task, tasks.due_date, tasks.completed FROM tasks;")
+def print_current_tasks (db, task, due_date)
+  print_tasks = db.execute("SELECT tasks.task, tasks.due_date FROM tasks WHERE completed = 'false';")
   print_tasks.each do |task|
-  puts "#{task['task']} is due to be completed on #{task['due_date']} and is completed? #{task['completed']}."
+  puts "#{task['task']} is due to be completed on #{task['due_date']}."
   end
 end
 
+def print_old_tasks (db, task, due_date)
+  print_tasks = db.execute("SELECT tasks.task, tasks.due_date FROM tasks WHERE completed = 'true';")
+  print_tasks.each do |task|
+  puts "#{task['task']} was due to be completed on #{task['due_date']}."
+  end
+end
 
 # DRIVER CODE
 
@@ -59,10 +65,10 @@ else
   puts "Okay! Seems like you have it all under control!"
 end
 
-puts "So what's next? Do you want to view your To Do List? (y/n)"
+puts "So what's next? Do you want to view your current To Do List? (y/n)"
 answer = gets.chomp
 if answer == "y"
-  print_tasks(db, task, due_date, completed)
+  print_current_tasks(db, task, due_date)
 else
   puts "Okie-dokie! Later!"
 end
@@ -75,4 +81,12 @@ if answer == "y"
   task_completed(db, task)
 else
   puts "Then you'd better get busy!"
+end
+
+puts "Do you want to look at all of the tasks you've already accomplished?"
+answer = gets.chomp
+if answer == "y"
+  print_old_tasks(db, task, due_date)
+else
+  puts "Have a great day!"
 end
