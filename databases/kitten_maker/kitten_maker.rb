@@ -1,6 +1,7 @@
 # OPERATION KITTEN EXPLOSION!
 
 # talk about Object Relational Mapping (ORM)
+# How do we take relational data and use it in an object-oriented language (Ruby, JS)
 
 # require gems
 require 'sqlite3'
