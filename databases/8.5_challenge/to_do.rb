@@ -31,13 +31,14 @@ def create_task (db, task, due_date, completed)
 end
 
 def task_completed (db, task)
-  db.execute("UPDATE tasks SET completed='true' WHERE task = ?", [task])
+  db.execute("UPDATE tasks SET completed = 'true' WHERE task = ?", [task])
+  puts "Okay! That has been set to completed!"
 end
 
 def print_tasks (db, task, due_date, completed)
-  db.execute("SELECT tasks.task, tasks.due_date, tasks.completed FROM tasks")
+  print_tasks = db.execute("SELECT tasks.task, tasks.due_date, tasks.completed FROM tasks;")
   print_tasks.each do |task|
-    puts "#{tasks['task']} is due to be completed on #{tasks[due_date]} and is completed? #{tasks[completed].upcase}."
+  puts "#{task['task']} is due to be completed on #{task['due_date']} and is completed? #{task['completed']}."
   end
 end
 
@@ -61,11 +62,17 @@ end
 puts "So what's next? Do you want to view your To Do List? (y/n)"
 answer = gets.chomp
 if answer == "y"
-  print_tasks = db.execute("SELECT tasks.task, tasks.due_date, tasks.completed FROM tasks;")
-  print_tasks.each do |task|
-  puts "#{task['task']} is due to be completed on #{task['due_date']} and is completed? #{task['completed']}."
-  end
+  print_tasks(db, task, due_date, completed)
 else
   puts "Okie-dokie! Later!"
 end
 
+puts "Did you finish a task? (y/n)"
+answer = gets.chomp
+if answer == "y"
+  puts "Which task should we update to completed?"
+  task = gets.chomp
+  task_completed(db, task)
+else
+  puts "Then you'd better get busy!"
+end
